@@ -25,11 +25,30 @@ li {
     display: list-item;
     text-align: -webkit-match-parent;
 }
-table, th, td {
-    border: 1px solid black;
+table {
+    border: 1px solid #ccc;
     border-collapse: collapse;
+    width: 100%;
 }
+th {
+    border: 1px solid black;
+}
+tr:nth-child(even) {background-color: #f2f2f2}
 th, td {
     padding: 5px;
     text-align: left;
+}
+th, td {
+    width: 15%;
+}
+#create {
+    margin: 20px;
+    width: 100%;
+}
+
+td.subject, th.subjectHeader {
+    width: auto;   
+}
+td.idCell, th.idHeader {
+    width: 7%;   
 }

@@ -10,8 +10,8 @@ $( document ).ready(function() {
               $("tbody#issues").empty();           
               $.each(data.issues, function(index, issue) {            
                 $("tbody#issues").append("<tr issueId='" + issue.id+"'><td>" + issue.project.name 
-                    +"</td><td>" + issue.id 
-                    +"</td><td class='description'>" + issue.subject 
+                    +"</td><td class='idCell'>" + issue.id 
+                    +"</td><td class='subject'>" + issue.subject 
                     +"</td><td class='action'><button class='delete'>Delete</button></td></tr>");
               });
               $(".delete").click(function() {
@@ -99,7 +99,7 @@ $( document ).ready(function() {
     };
 
     var makeEditable = function() {
-        $("td.description").dblclick(function () { 
+        $("td.subject").dblclick(function () { 
             var OriginalContent = $(this).text(); 
             $(this).addClass("cellEditing"); 
             $(this).html("<input type='text' value='" + OriginalContent + "' />"); 
