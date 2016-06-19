@@ -9,10 +9,10 @@ $( document ).ready(function() {
             success: function(data) {
               $("tbody#issues").empty();           
               $.each(data.issues, function(index, issue) {            
-                $("tbody#issues").append("<tr issueId='" + issue.id+"'><td>" + issue.project.name 
+                $("tbody#issues").append("<tr issueId='" + issue.id+"'><td class='project'>" + issue.project.name 
                     +"</td><td class='idCell'>" + issue.id 
                     +"</td><td class='subject'>" + issue.subject 
-                    +"</td><td class='action'><button class='delete'>Delete</button></td></tr>");
+                    +"</td><td class='action'><button class='delete'><img src='/static/images/delete.png' width='20' height='20' /></button></td></tr>");
               });
               $(".delete").click(function() {
                 var issueId = $(this).parent().parent().attr('issueId');

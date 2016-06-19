@@ -1,6 +1,6 @@
 div#container {
     margin:auto;
-    max-width: 600px;
+    max-width: 800px;
     font-family: 'Slabo 27px', serif;
 }
 
@@ -32,6 +32,14 @@ table {
 }
 th {
     border: 1px solid black;
+    background-color: #2C5E96;
+    color: white;
+    font-weight: 700;
+    font-size: 1.15em;
+    font-family: 'Open Sans', sans-serif;
+}
+td {
+    font-size: 1.1em;
 }
 tr:nth-child(even) {background-color: #f2f2f2}
 th, td {
@@ -42,13 +50,42 @@ th, td {
     width: 15%;
 }
 #create {
-    margin: 20px;
+    margin: 20px 0 20px 0;
     width: 100%;
+    border-radius: 25px;
+    background: #0EA728;
+    box-shadow: 2px 2px 5px #888888;
+    padding: 5px;
+    font-weight: 700;
+    color: white;
+    font-size: 1em;    
 }
 
 td.subject, th.subjectHeader {
     width: auto;   
 }
 td.idCell, th.idHeader {
-    width: 7%;   
+    width: 7%;
+    text-align: center;
+}
+td.action, th.actionHeader {
+    text-align: center;
+}
+td.project, th.projectHeader {
+    text-align: center;
+}
+.delete {
+    border: 0; 
+    background: transparent
+}
+#project_selector {
+    font-size: 1.2em;
+}
+
+#project_selector select {
+    font-size: 1.1em;
+}
+
+#project_selector span {
+    padding: 10px;
 }

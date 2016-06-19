@@ -4,6 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Redmine interface</title>
         <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="static/css/style.css">
         <script src="static/js/jquery-3.0.0.min.js"></script>
         <script src="static/js/logic.js"></script>
@@ -14,18 +15,20 @@
     </head>
     <body>
         <div id="container">
-            <span>Project:</span>
-            <select>              
-            </select>
+            <div id="project_selector">
+                <span>Project:</span>
+                <select>              
+                </select>
+            </div>
             <br>
-            <button id="create">+</button>
+            <button id="create">Add task</button>
             <br>
             <table>
                 <tr>
-                    <th>Project</th>
+                    <th class="projectHeader">Project</th>
                     <th class="idHeader">ID</th>
                     <th class="subjectHeader">Subject</th>
-                    <th>Actions</th>
+                    <th class="actionHeader">Actions</th>
                 </tr>      
                 <tbody id="issues">
                 </tbody>          
