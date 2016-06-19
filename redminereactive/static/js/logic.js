@@ -25,7 +25,7 @@ $( document ).ready(function() {
     });
 
     $.ajax({
-        url: "http://redmine.tomassetti.me/projects.json?key=" + api_key,
+        url: window.base_url + "/projects.json?key=" + api_key,
         type: 'GET',
         crossDomain: true,
         dataType: 'jsonp',
