@@ -1,0 +1,35 @@
+div#container {
+    margin:auto;
+    max-width: 600px;
+    font-family: 'Slabo 27px', serif;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+li:first-child {
+    border-top: 1px solid #333;
+}
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}

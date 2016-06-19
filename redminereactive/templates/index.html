@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>To-do list</title>
+        <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="static/css/style.css">
+        <script src="static/js/jquery-3.0.0.min.js"></script>
+        <script src="static/js/logic.js"></script>
+        <script>
+            window.api_key = "{{ api_key }}";
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <span>Project:</span>
+            <select>              
+            </select>
+            <br>
+            <br>
+            <table>
+                <tr>
+                    <th>Project</th>
+                    <th>ID</th>
+                    <th>Subject</th>
+                </tr>      
+                <tbody id="issues">
+                </tbody>          
+            </table>
+        </div>
+    </body>
+</html>
