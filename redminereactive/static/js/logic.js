@@ -2,7 +2,7 @@ $( document ).ready(function() {
 
     var loadIssues = function(projectId) {
         $.ajax({
-            url: "http://redmine.tomassetti.me/issues.json?key=" + api_key + "&project_id="+projectId,
+            url: window.base_url + "/issues.json?key=" + window.api_key + "&project_id="+projectId,
             type: 'GET',
             crossDomain: true,
             dataType: 'jsonp',

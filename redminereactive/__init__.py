@@ -12,6 +12,7 @@ xmldir = os.path.abspath(os.path.join(rootdir, 'xml'))
 app.verbose = False
 app.debug = True
 
-app.api_key = open('apikey.txt', 'r').read().strip()
+app.base_url = open('conf.txt', 'r').readlines()[0].strip()
+app.api_key = open('conf.txt', 'r').readlines()[1].strip()
 
 socketio = SocketIO(app)
