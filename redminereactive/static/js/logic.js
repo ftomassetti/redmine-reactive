@@ -11,7 +11,12 @@ $( document ).ready(function() {
               $.each(data.issues, function(index, issue) {            
                 $("tbody#issues").append("<tr issueId='" + issue.id+"'><td>" + issue.project.name 
                     +"</td><td>" + issue.id 
-                    +"</td><td class='description'>" + issue.subject +"</td></tr>");
+                    +"</td><td class='description'>" + issue.subject 
+                    +"</td><td class='action'><button class='delete'>Delete</button></td></tr>");
+              });
+              $(".delete").click(function() {
+                var issueId = $(this).parent().parent().attr('issueId');
+                deleteIssue(issueId);
               });
               makeEditable();
             },
@@ -22,6 +27,11 @@ $( document ).ready(function() {
     $("select").change(function() {
         var projectId = $( "select option:selected" ).attr('value');
         loadIssues(projectId);
+    });
+
+    $("#create").click(function() {
+        var projectId = $( "select option:selected" ).attr('value');
+        createIssue(projectId, 'New issue');
     });
 
     $.ajax({
@@ -38,7 +48,6 @@ $( document ).ready(function() {
     });
 
     var setSubject = function(issueId, subject) {
-        console.log("Setting subject '"+subject+"' for issue "+issueId);        
         $.ajax({
             url: "/commands/set_issue_subject",
             type: 'PUT',
@@ -52,6 +61,41 @@ $( document ).ready(function() {
             },
             error: function() { alert('Failed!'); },
         });
+    };
+
+    var createIssue = function(projectId, subject) {
+        $.ajax({
+            url: "/commands/create_issue",
+            type: 'POST',
+            data: JSON.stringify({project_id:projectId, subject:subject}),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            success: function(data) {              
+              loadIssues(projectId);
+            },
+            error: function() { alert('Failed!'); },
+        });
+    };
+
+    var deleteIssue = function(issueId) {        
+        if (confirm("Are you sure?")) {
+            $.ajax({
+                url: "/commands/delete_issue",
+                type: 'POST',
+                data: JSON.stringify({issue_id:issueId}),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                success: function(data) {
+                  var projectId = $( "select option:selected" ).attr('value');
+                  loadIssues(projectId);
+                },
+                error: function() { alert('Failed!'); },
+            });
+        }        
     };
 
     var makeEditable = function() {
