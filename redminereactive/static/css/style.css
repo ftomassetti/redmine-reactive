@@ -74,6 +74,9 @@ td.action, th.actionHeader {
 td.project, th.projectHeader {
     text-align: center;
 }
+td.priority, th.priorityHeader {
+    text-align: center;
+}
 .delete {
     border: 0; 
     background: transparent

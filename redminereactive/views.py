@@ -14,6 +14,13 @@ def set_issue_subject():
     redmine.issue.update(data['id'], subject=data['subject'])    
     return "OK"
 
+@app.route("/commands/set_issue_priority", methods=["PUT"])
+def set_issue_priority():
+    redmine = Redmine(app.base_url, key=app.api_key)
+    data = request.json
+    redmine.issue.update(data['id'], priority_id=data['priorityId'])
+    return "OK"
+
 @app.route("/commands/create_issue", methods=["POST"])
 def create_issue():
     redmine = Redmine(app.base_url, key=app.api_key)    
